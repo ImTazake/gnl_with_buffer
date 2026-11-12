@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tisilva <tisilva@student.42lisboa.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/12 07:04:05 by tisilva           #+#    #+#             */
+/*   Updated: 2026/11/12 19:30:39 by tisilva          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include <stdlib.h>
@@ -6,10 +18,13 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+# if BUFFER_SIZE <= 0 || BUFFER_SIZE > 2147483647
+#  error "Invalid BUFFER_SIZE"
+# endif
 
 typedef struct s_stash
 {
-	char	buf[BUFFER_SIZE + 1];
+	char	buf[BUFFER_SIZE];
 	size_t	pos;
 	size_t	end;
 }	t_stash;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tisilva <tisilva@student.42lisboa.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/12 07:03:31 by tisilva           #+#    #+#             */
+/*   Updated: 2026/11/12 19:24:06 by tisilva          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
@@ -6,8 +18,7 @@ char	*get_next_line(int fd)
 	char			*line;
 	size_t			len;
 
-	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE <= 0
-		|| read(fd, NULL, 0) < 0)
+	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = NULL;
 	len = 0;
